@@ -23,7 +23,7 @@ fi
 
 sleep 30
 
-salt-key --yes --accept-all
+#salt-key --yes --accept-all
 
 while /bin/true; do
 #  ps aux |grep salt-master |grep -q -v grep

@@ -1,0 +1,26 @@
+To run the salt master/minion demo without jinja
+docker-compose -f docker-compose-nojinja.yaml -p nojinja up
+
+To see the running instances
+docker container ps
+
+To connect to the master
+docker exec -it saltmaster bash
+
+To shut it down 
+docker-compose -f docker-compose-nojinja.yaml down
+
+
+
+
+To run the salt master/minion demo with jinja
+docker-compose -f docker-compose-jinja.yaml -p nojinja up
+
+To see the running instances
+docker container ps
+
+To connect to the master
+docker exec -it saltmaster bash
+
+To shut it down 
+docker-compose -f docker-compose-jinja.yaml down
