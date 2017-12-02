@@ -1,0 +1,35 @@
+version: "3"
+services:
+  # add hostname of salt to /etc/hosts so it finds self
+  master:
+    image: "ubuntu:16.04"
+    container_name: "master"
+    ports:
+      - "4505:4505"
+      - "4506:4506"
+    networks:
+      - common
+    #volumes:
+    #  - "$PWD/srv/configs/master:/etc/salt/master"
+    #  - "$PWD/srv/salt:/srv/salt"
+    #  - "$PWD/srv/pillar:/srv/pillar"
+  ubuntu:
+    image: "ubuntu:16.04"
+    container_name: "master"
+    image: "alexwilczewski0/hpulse:dev-0.1.1"
+    container_name: "ubuntu"
+    networks:
+      - common
+    #volumes:
+    #  - "$PWD/srv/configs/minion:/etc/salt/minion"
+  centos:
+    image: ""
+    container_name: "centos:centos7"
+    networks:
+      - common
+    #volumes:
+    #  - "$PWD/srv/configs/minion:/etc/salt/minion"
+
+networks:
+  common:
+    driver: bridge

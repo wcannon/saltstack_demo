@@ -1,0 +1,3 @@
+docker run --name master  -d master:latest
+
+docker exec -it master bash

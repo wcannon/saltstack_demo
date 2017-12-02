@@ -1,0 +1,25 @@
+version: "3"
+services:
+  master:
+    image: "saltmaster:latest"
+    container_name: "salt"
+    volumes:
+    - "$PWD/srv_nojinja/salt:/srv/salt"
+    - "$PWD/srv_nojinja/pillar:/srv/pillar"
+    - "$PWD/srv_nojinja/configs/master:/etc/salt/master"
+    networks:
+      - common
+  ubuntu:
+    image: "saltminion_ubuntu:latest"
+    container_name: "ubuntu-minion"
+    networks:
+      - common
+  centos:
+    image: "saltminion_centos:latest"
+    container_name: "centos-minion"
+    networks:
+      - common
+
+networks:
+  common:
+    driver: bridge

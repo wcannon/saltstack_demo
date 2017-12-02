@@ -19,6 +19,8 @@ RUN yum -y update && \
                 tar &&\
 	yum clean expire-cache
 
+RUN yum install -y vim
+
 # Install setuptools + pip
 RUN cd /tmp && \
     curl https://bootstrap.pypa.io/get-pip.py -O &&\

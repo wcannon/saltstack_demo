@@ -1,0 +1,10 @@
+file_roots:                                                                                                                                                                       
+  base:                                                                                                                                                                           
+    - /srv/salt                                                                                                                                                                   
+
+pillar_roots:
+  base:
+    - /srv/pillar
+
+auto_accept: True
+
