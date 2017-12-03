@@ -6,8 +6,6 @@ RUN echo 'deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/2017.7 xenial mai
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y salt-minion
 
-EXPOSE 4505 4506
-
 ADD run.sh /usr/local/bin/minion-run.sh
 RUN chmod +x /usr/local/bin/minion-run.sh
 
