@@ -1,6 +1,6 @@
-file_roots:                                                                                                                                                                       
-  base:                                                                                                                                                                           
-    - /srv/salt                                                                                                                                                                   
+file_roots:
+  base:
+    - /srv/salt
 
 pillar_roots:
   base:

@@ -1,7 +1,10 @@
-httpd_web_server:
- pkg:
-   - name: httpd
-   - installed
- service.running:
-   - name: httpd
-   - enabled: True
+apache:
+  pkg.installed:
+    - name: httpd
+  group.present:
+    - name: apache
+    - system: True
+  user.present:
+    - name: apache
+    - gid: apache 
+    - system: True

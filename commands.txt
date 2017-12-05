@@ -1,0 +1,35 @@
+------------- without jinja ---------------------
+docker-compose -f docker-compose-nojinja up -d
+docker exec -it salt bash
+
+cd /srv/salt
+# cat each file one by one and explain
+
+salt \* grains.get os
+
+salt -G os:centos state.apply webserver_centos
+
+salt -G os:ubuntu state.apply webserver_ubuntu
+
+salt \* state.highstate
+
+docker-compose -f docker-compose-nojinja.yaml down
+
+
+-------------- with jinja -----------------------
+docker-compose -f docker-compose-jinja up -d
+docker exec -it salt bash
+
+cd /srv/salt
+# cat each file one by one and explain
+
+salt \* grains.get os
+
+salt -G os:centos state.apply webserver
+
+salt -G os:ubuntu state.apply webserver
+
+salt \* state.highstate
+
+docker-compose -f docker-compose-jinja.yaml down
+
