@@ -1,5 +1,5 @@
 ------------- without jinja ---------------------
-docker-compose -f docker-compose-nojinja up -d
+docker-compose -f docker-compose-nojinja.yaml up -d
 docker exec -it salt bash
 
 cd /srv/salt
@@ -17,13 +17,17 @@ docker-compose -f docker-compose-nojinja.yaml down
 
 
 -------------- with jinja -----------------------
-docker-compose -f docker-compose-jinja up -d
+docker-compose -f docker-compose-jinja.yaml up -d
 docker exec -it salt bash
 
 cd /srv/salt
 # cat each file one by one and explain
 
 salt \* grains.get os
+
+salt \* pillar.refresh
+
+salt \* pillar.items
 
 salt -G os:centos state.apply webserver
 

@@ -1,5 +1,5 @@
 users: 
   - second
   - wcannon
-  - dbajet'
+  - dbajet
   - mark

@@ -4,8 +4,8 @@ base:
 
   'os:ubuntu':
     - match: grain
-    - webserver_ubuntu
+    - webserver
 
   'os:centos':
     - match: grain
-    - webserver_centos
+    - webserver
